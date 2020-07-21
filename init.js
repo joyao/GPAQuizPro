@@ -73,7 +73,7 @@ function getQuestions(id, type) {
             if (type === "MC") {
                 //資料陣列
                 //var tmp = new Quiz_MultipleChoice(val.data[2], val.data[3], val.data[4], val.data[5], val.data[6], val.data[1], val.data[7]);
-                tmp = new Quiz_MultipleChoice("Q" + val.index, val.data[2], val.data[3], val.data[4], val.data[5], val.data[6], val.data[1], val.data[7].toString().replace('\n ', '<br>'));
+                tmp = new Quiz_MultipleChoice("Q" + val.index, val.data[2], val.data[3], val.data[4], val.data[5], val.data[6], val.data[1], val.data[7].toString().replace(/\n/g, "<br>"));
                 QuizArr.push(tmp);
                 temphtml = '<div id="' + tmp.id + '" class="ui form">\
                               <div class="grouped fields">\
@@ -107,7 +107,7 @@ function getQuestions(id, type) {
                               </div>\
                             </div>';
             } else if (type === "TF") {
-                tmp = new Quiz_TrueFalse("Q" + val.index, val.data[2], val.data[3], val.data[4], val.data[1] === "1" ? "O" : "X", val.data[5].toString().replace('\n ', '<br>'));
+                tmp = new Quiz_TrueFalse("Q" + val.index, val.data[2], val.data[3], val.data[4], val.data[1] === "1" ? "O" : "X", val.data[5].toString().replace(/\n/g, "<br>"));
                 QuizArr.push(tmp);
                 temphtml = '<div id="' + tmp.id + '" class="ui form">\
                               <div class="grouped fields">\

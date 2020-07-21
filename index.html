@@ -31,14 +31,18 @@
             margin: 5em 0em 0em;
             padding: 5em 0em;
         }
-        .subjectmenu{
+
+        .subjectmenu {
             cursor: pointer;
         }
+
         .ui.checkbox .box, .ui.checkbox label {
-            font-size: 1.15em;
-        }
-        .ui.form .grouped.fields>label {
             font-size: 1.2em;
+            line-height: 25px;
+        }
+
+        .ui.form .grouped.fields > label {
+            font-size: 1.3em;
         }
     </style>
 
@@ -86,7 +90,8 @@
             <img width="100%" src="images/QuizTypeList.PNG" />
         </div>
         <div id="quizscore" style="display:none;text-align:right;color:blue;"></div>
-        <div style="margin-bottom:20px;">
+        <div style="        margin-bottom: 20px;
+">
             <div class="ui active centered inline loader" style="display:none;"></div>
             <table id="quiztable" class="ui celled table" style="display:none;">
                 <tr>

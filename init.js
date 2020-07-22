@@ -19,6 +19,13 @@
         info: "錯誤採購態樣：是非 2 題；選擇 4 題<br>投標須知及招標文件製作：是非 4 題；選擇 8 題<br>採購契約：是非 4 題；選擇 8 題<br>底價及價格分析：是非 3 題；選擇 6 題<br>政府採購全生命週期概論：是非 4 題；選擇 8 題<br>道德規範及違法處置：是非 2 題；選擇 4 題<br>是非：1 分/題；選擇：2 分/題",
         wsurl_MC: "https://script.google.com/macros/s/AKfycbx5sKlLicMgexWN46sGVFVWf6FmR17A3zMAGmykbA/exec",
         wsurl_TF: "https://script.google.com/macros/s/AKfycbyo_NdhoXQbrO8NK2f2CWd-ocG39llm5N03JWFnkw/exec"
+    },
+    {
+        id: "ch1",
+        name: "政府採購法之總則、招標及決標",
+        info: "政府採購法之總則、招標及決標：是非 12 題；選擇 24 題",
+        wsurl_MC: "https://script.google.com/macros/s/AKfycbxvjzTkYxo5dHJap-cg261rXhaYezY_XWJp3pnd-Q/exec",
+        wsurl_TF: ""
     }
 ];
 
@@ -48,6 +55,7 @@ var QuizArr = [];
 function getQuestions(id, type) {
 
     $("#quiztable").html("");
+    $("#quizscore").html("");
     $("#submitQuiz").hide();
     $(".loader").fadeIn();
     var subject = SubjectObj.filter(item => item.id === id)[0];

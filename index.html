@@ -44,6 +44,10 @@
         .ui.form .grouped.fields > label {
             font-size: 1.3em;
         }
+
+        .ui.message.detailanswer {
+            font-size: 1.1em;
+        }
     </style>
 
 </head>
@@ -79,6 +83,12 @@
                     <div class="item" onclick="getQuestions('subject3','TF')">是非題模擬測驗</div>
                 </div>
             </div>
+            <div class="ui simple dropdown item">
+                單科測驗 <i class="dropdown icon"></i>
+                <div class="menu">
+                    <div class="item" onclick="getQuestions('ch1','MC')">政府採購法之總則、招標及決標</div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -92,7 +102,7 @@
         <div id="quizscore" style="display:none;text-align:right;color:blue;"></div>
         <div style="        margin-bottom: 20px;
 ">
-            <div class="ui active centered inline loader" style="display:none;"></div>
+            <div class="ui active centered inline loader" style="display: none;"></div>
             <table id="quiztable" class="ui celled table" style="display:none;">
                 <tr>
                     <td></td>

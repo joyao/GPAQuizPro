@@ -64,6 +64,7 @@ function getQuestions(id, type) {
     $("#quiztable").html("");
     $("#quizscore").html("");
     $("#submitQuiz").hide();
+    $("#reQuiz").hide();
     $(".loader").fadeIn();
     var subject = SubjectObj.filter(item => item.id === id)[0];
 
@@ -122,20 +123,20 @@ function getQuestions(id, type) {
                               </div>\
                             </div>';
             } else if (type === "TF") {
-                tmp = new Quiz_TrueFalse("Q" + val.index, val.data[2], val.data[3], val.data[4], val.data[1] === "1" ? "O" : "X", val.data[5].toString().replace(/\n/g, "<br>"));
+                tmp = new Quiz_TrueFalse("Q" + val.index, val.data[2], val.data[3], val.data[4], val.data[1], val.data[5].toString().replace(/\n/g, "<br>"));
                 QuizArr.push(tmp);
                 temphtml = '<div id="' + tmp.id + '" class="ui form">\
                               <div class="grouped fields">\
                                 <label>'+ tmp.id + '. ' + tmp.question + '</label>\
                                 <div class="field">\
                                   <div class="ui radio checkbox">\
-                                    <input type="radio" name="' + tmp.id + '" value="O">\
+                                    <input type="radio" name="' + tmp.id + '" value="1">\
                                     <label>'+ tmp.option1 + '</label>\
                                   </div>\
                                 </div>\
                                 <div class="field">\
                                   <div class="ui radio checkbox">\
-                                    <input type="radio" name="' + tmp.id + '" value="X">\
+                                    <input type="radio" name="' + tmp.id + '" value="2">\
                                     <label>'+ tmp.option2 + '</label>\
                                   </div>\
                                 </div>\
@@ -181,7 +182,11 @@ function submitQuiz() {
                     } else {
                         $("#" + item.id + " label").css("color", "red");
                         $("#" + item.id + " .detailanswer").addClass("negative");
-                        $("#" + item.id + " .detailanswer").html("答案為：(" + item.answer + ")<br>詳解：<br>" + item.detail);
+                        if (gtype === "MC") {
+                            $("#" + item.id + " .detailanswer").html("答案為：(" + item.answer + ")<br>詳解：<br>" + item.detail);
+                        } else if (gtype === "TF") {
+                            $("#" + item.id + " .detailanswer").html("答案為：(" + (item.answer === "1" ? "O" : "X") + ")<br>詳解：<br>" + item.detail);
+                        }
                     }
 
                     if (index === QuizArr.length - 1) {

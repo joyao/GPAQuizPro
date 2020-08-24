@@ -191,9 +191,9 @@ function submitQuiz() {
 
                     if (index === QuizArr.length - 1) {
                         if (gtype === "MC") {
-                            $("#quizscore").html("分數：" + score.toString() + "/" + (QuizArr.length * 2).toString());
+                            $("#quizscore").html("分數：" + score.toString() + "/" + (QuizArr.length * 2).toString() + " = " + (score / (QuizArr.length * 2) * 100).toFixed(2).toString() + "%");
                         } else if (gtype === "TF") {
-                            $("#quizscore").html("分數：" + score.toString() + "/" + QuizArr.length.toString());
+                            $("#quizscore").html("分數：" + score.toString() + "/" + QuizArr.length.toString() + " = " + (score / QuizArr.length * 100).toFixed(2).toString() + "%");
                         }
                         $("#quizscore").show();
                         $(".ui.message.detailanswer").removeClass("hidden");

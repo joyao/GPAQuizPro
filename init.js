@@ -185,7 +185,7 @@ function submitQuiz() {
                         if (gtype === "MC") {
                             $("#" + item.id + " .detailanswer").html("答案為：(" + item.answer + ")<br>詳解：<br>" + item.detail);
                         } else if (gtype === "TF") {
-                            $("#" + item.id + " .detailanswer").html("答案為：(" + (item.answer === "1" ? "O" : "X") + ")<br>詳解：<br>" + item.detail);
+                            $("#" + item.id + " .detailanswer").html("答案為：(" + (item.answer.toString() === "1" ? "O" : "X") + ")<br>詳解：<br>" + item.detail);
                         }
                     }
 
